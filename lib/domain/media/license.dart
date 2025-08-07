@@ -14,7 +14,7 @@ class License {
   factory License.parse(XmlElement element) => License(
         type: element.getAttribute('type'),
         href: element.getAttribute('href'),
-        value: element.text,
+        value: element.innerText,
       );
 
   /// The type of the license

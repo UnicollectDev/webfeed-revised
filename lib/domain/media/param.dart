@@ -12,7 +12,7 @@ class Param {
   /// Parse constructor for the Param class, used when 'parsing' a feed
   factory Param.parse(XmlElement element) => Param(
         name: element.getAttribute('name'),
-        value: element.text,
+        value: element.innerText,
       );
 
   /// The name of the parameter

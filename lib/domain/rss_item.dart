@@ -33,17 +33,19 @@ class RssItem {
 
   /// Parse constructor for the RssItem class, used when 'parsing' a feed
   factory RssItem.parse(XmlElement element) => RssItem(
-        title: element.findElements('title').firstOrNull?.text,
-        description:
-            removeHtml(element.findElements('description').firstOrNull?.text),
-        link: element.findElements('link').firstOrNull?.text,
+        title: element.findElements('title').firstOrNull?.innerText,
+        description: removeHtml(
+          element.findElements('description').firstOrNull?.innerText,
+        ),
+        link: element.findElements('link').firstOrNull?.innerText,
         categories:
             element.findElements('category').map(RssCategory.parse).toList(),
-        guid: element.findElements('guid').firstOrNull?.text,
-        pubDate:
-            parseDateTime(element.findElements('pubDate').firstOrNull?.text),
-        author: element.findElements('author').firstOrNull?.text,
-        comments: element.findElements('comments').firstOrNull?.text,
+        guid: element.findElements('guid').firstOrNull?.innerText,
+        pubDate: parseDateTime(
+          element.findElements('pubDate').firstOrNull?.innerText,
+        ),
+        author: element.findElements('author').firstOrNull?.innerText,
+        comments: element.findElements('comments').firstOrNull?.innerText,
         source: element.findElements('source').map(RssSource.parse).firstOrNull,
         content: element
             .findElements('content:encoded')

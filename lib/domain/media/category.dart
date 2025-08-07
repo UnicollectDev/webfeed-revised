@@ -14,7 +14,7 @@ class Category {
   factory Category.parse(XmlElement element) => Category(
         scheme: element.getAttribute('scheme'),
         label: element.getAttribute('label'),
-        value: element.text,
+        value: element.innerText,
       );
 
   /// The scheme of the category

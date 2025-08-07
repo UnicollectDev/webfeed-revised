@@ -14,7 +14,7 @@ class RssContent {
 
   /// Parse constructor for the RssContent class, used when 'parsing' a feed
   factory RssContent.parse(XmlElement element) {
-    final content = element.text;
+    final content = element.innerText;
     final images = <String>[];
     _imagesRegExp.allMatches(content).forEach((match) {
       images.add(match.group(1)!);

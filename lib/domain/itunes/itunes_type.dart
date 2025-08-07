@@ -17,7 +17,7 @@ enum ItunesType {
 
 /// Parses the [element] text to a ItunesType
 ItunesType newItunesType(XmlElement element) {
-  switch (element.text) {
+  switch (element.innerText) {
     case 'episodic':
       return ItunesType.episodic;
     case 'serial':

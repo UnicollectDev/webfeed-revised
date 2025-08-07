@@ -14,7 +14,7 @@ class Credit {
   factory Credit.parse(XmlElement element) => Credit(
         role: element.getAttribute('role'),
         scheme: element.getAttribute('scheme'),
-        value: element.text,
+        value: element.innerText,
       );
 
   /// The role of the credit

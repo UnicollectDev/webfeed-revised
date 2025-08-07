@@ -14,7 +14,7 @@ class PeerLink {
   factory PeerLink.parse(XmlElement element) => PeerLink(
         type: element.getAttribute('type'),
         href: element.getAttribute('href'),
-        value: element.text,
+        value: element.innerText,
       );
 
   /// The type of the P2P link

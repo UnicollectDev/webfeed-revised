@@ -32,33 +32,28 @@ class Syndication {
   /// Parse constructor for the Syndication class, used when 'parsing' a feed
   factory Syndication.parse(XmlElement element) {
     SyndicationUpdatePeriod updatePeriod;
-    switch (element.findElements('sy:updatePeriod').firstOrNull?.text) {
+    switch (element.findElements('sy:updatePeriod').firstOrNull?.innerText) {
       case 'hourly':
         updatePeriod = SyndicationUpdatePeriod.hourly;
-        break;
       case 'daily':
         updatePeriod = SyndicationUpdatePeriod.daily;
-        break;
       case 'weekly':
         updatePeriod = SyndicationUpdatePeriod.weekly;
-        break;
       case 'monthly':
         updatePeriod = SyndicationUpdatePeriod.monthly;
-        break;
       case 'yearly':
         updatePeriod = SyndicationUpdatePeriod.yearly;
-        break;
       default:
         updatePeriod = SyndicationUpdatePeriod.daily;
-        break;
     }
     return Syndication(
       updatePeriod: updatePeriod,
       updateFrequency: int.tryParse(
-        element.findElements('sy:updateFrequency').firstOrNull?.text ?? '1',
+        element.findElements('sy:updateFrequency').firstOrNull?.innerText ??
+            '1',
       ),
       updateBase: parseDateTime(
-        element.findElements('sy:updateBase').firstOrNull?.text,
+        element.findElements('sy:updateBase').firstOrNull?.innerText,
       ),
     );
   }

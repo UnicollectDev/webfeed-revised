@@ -9,9 +9,9 @@ class AtomPerson {
 
   /// Parse constructor for the AtomPerson class, used when 'parsing' a feed
   factory AtomPerson.parse(XmlElement element) => AtomPerson(
-        name: element.findElements('name').firstOrNull?.text,
-        uri: element.findElements('uri').firstOrNull?.text,
-        email: element.findElements('email').firstOrNull?.text,
+        name: element.findElements('name').firstOrNull?.innerText,
+        uri: element.findElements('uri').firstOrNull?.innerText,
+        email: element.findElements('email').firstOrNull?.innerText,
       );
 
   /// The name of the person

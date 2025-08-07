@@ -8,7 +8,7 @@ class RssCategory {
 
   /// Parse constructor for the RssCategory class, used when 'parsing' a feed
   factory RssCategory.parse(XmlElement element) =>
-      RssCategory(element.getAttribute('domain'), element.text);
+      RssCategory(element.getAttribute('domain'), element.innerText);
 
   /// The domain of the category
   final String? domain;

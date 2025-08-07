@@ -74,7 +74,7 @@ class Media {
             .findElements('media:description')
             .map(Description.parse)
             .firstOrNull,
-        keywords: element.findElements('media:keywords').firstOrNull?.text,
+        keywords: element.findElements('media:keywords').firstOrNull?.innerText,
         thumbnails: element
             .findElements('media:thumbnail')
             .map(Thumbnail.parse)
@@ -99,7 +99,7 @@ class Media {
                 .findElements('media:comments')
                 .firstOrNull
                 ?.findElements('media:comment')
-                .map((e) => e.text)
+                .map((e) => e.innerText)
                 .toList() ??
             [],
         embed: element.findElements('media:embed').map(Embed.parse).firstOrNull,
@@ -107,14 +107,14 @@ class Media {
                 .findElements('media:responses')
                 .firstOrNull
                 ?.findElements('media:response')
-                .map((e) => e.text)
+                .map((e) => e.innerText)
                 .toList() ??
             [],
         backLinks: element
                 .findElements('media:backLinks')
                 .firstOrNull
                 ?.findElements('media:backLink')
-                .map((e) => e.text)
+                .map((e) => e.innerText)
                 .toList() ??
             [],
         status:

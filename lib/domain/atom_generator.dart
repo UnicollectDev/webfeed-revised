@@ -10,7 +10,7 @@ class AtomGenerator {
   factory AtomGenerator.parse(XmlElement element) {
     final uri = element.getAttribute('uri');
     final version = element.getAttribute('version');
-    final value = element.text;
+    final value = element.innerText;
     return AtomGenerator(uri, version, value);
   }
 

@@ -28,7 +28,7 @@ Iterable<XmlElement>? findElements(
 /// parses it as a boolean
 bool parseBoolLiteral(XmlElement element, String tagName) {
   final v =
-      element.findElements(tagName).firstOrNull?.text.toLowerCase().trim();
+      element.findElements(tagName).firstOrNull?.innerText.toLowerCase().trim();
   if (v == null) return false;
   return ['yes', 'true'].contains(v);
 }

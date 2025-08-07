@@ -18,7 +18,7 @@ enum ItunesEpisodeType {
 
 /// Parses the [element] text to a ItunesEpisodeType
 ItunesEpisodeType newItunesEpisodeType(XmlElement element) {
-  switch (element.text) {
+  switch (element.innerText) {
     case 'full':
       return ItunesEpisodeType.full;
     case 'trailer':

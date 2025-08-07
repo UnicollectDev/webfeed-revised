@@ -373,7 +373,7 @@ void main() {
     expect(
       {
         feed.itunes!.categories![0].category,
-        feed.itunes!.categories![1].category
+        feed.itunes!.categories![1].category,
       },
       ['Technology', 'Foo'],
     );
@@ -381,10 +381,8 @@ void main() {
       switch (category.category) {
         case 'Foo':
           expect(category.subCategories, ['Bar', 'Baz']);
-          break;
         case 'Technology':
           expect(category.subCategories, ['Software How-To', 'Tech News']);
-          break;
       }
     }
     expect(feed.itunes!.title, 'Go Time');

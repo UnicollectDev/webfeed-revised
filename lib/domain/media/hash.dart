@@ -12,7 +12,7 @@ class Hash {
   /// Parse constructor for the Hash class, used when 'parsing' a feed
   factory Hash.parse(XmlElement element) => Hash(
         algo: element.getAttribute('algo'),
-        value: element.text,
+        value: element.innerText,
       );
 
   /// The algorithm of the hash

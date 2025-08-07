@@ -14,7 +14,7 @@ class Restriction {
   factory Restriction.parse(XmlElement element) => Restriction(
         relationship: element.getAttribute('relationship'),
         type: element.getAttribute('type'),
-        value: element.text,
+        value: element.innerText,
       );
 
   /// The relationship of the restriction

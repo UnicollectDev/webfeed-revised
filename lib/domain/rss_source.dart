@@ -9,7 +9,7 @@ class RssSource {
   /// Parse constructor for the RssSource class, used when 'parsing' a feed
   factory RssSource.parse(XmlElement element) {
     final url = element.getAttribute('url');
-    final value = element.text;
+    final value = element.innerText;
 
     return RssSource(url, value);
   }

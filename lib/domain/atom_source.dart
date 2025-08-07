@@ -14,9 +14,9 @@ class AtomSource {
 
   /// Parse constructor for the AtomSource class, used when 'parsing' a feed
   factory AtomSource.parse(XmlElement element) => AtomSource(
-        id: element.findElements('id').firstOrNull?.text,
-        title: element.findElements('title').firstOrNull?.text,
-        updated: element.findElements('updated').firstOrNull?.text,
+        id: element.findElements('id').firstOrNull?.innerText,
+        title: element.findElements('title').firstOrNull?.innerText,
+        updated: element.findElements('updated').firstOrNull?.innerText,
       );
 
   /// The id of the source feed

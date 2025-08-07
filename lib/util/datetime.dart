@@ -30,8 +30,9 @@ DateTime? _parseRfc822DateTime(String dateString) {
       pattern = rfc822DateWithoutSecondsPattern;
     }
 
-    //force locale to en_US because EEE always en_US and cannot be parsed in other locales
-    final format = DateFormat(pattern,'en_US');
+    //force locale to en_US because EEE always en_US and cannot be parsed
+    //in other locales
+    final format = DateFormat(pattern, 'en_US');
     return format.parse(dateString, utc);
   } on FormatException {
     return null;

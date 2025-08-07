@@ -11,7 +11,7 @@ class Tags {
 
   /// Parse constructor for the Tags class, used when 'parsing' a feed
   factory Tags.parse(XmlElement element) => Tags(
-        tags: element.text,
+        tags: element.innerText,
         weight: int.tryParse(element.getAttribute('weight') ?? '1'),
       );
 

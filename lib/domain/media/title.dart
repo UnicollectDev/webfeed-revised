@@ -12,7 +12,7 @@ class Title {
   /// Parse constructor for the Title class, used when 'parsing' a feed
   factory Title.parse(XmlElement element) => Title(
         type: element.getAttribute('type'),
-        value: element.text,
+        value: element.innerText,
       );
 
   /// The type of the title

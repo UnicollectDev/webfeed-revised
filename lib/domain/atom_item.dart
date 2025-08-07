@@ -29,10 +29,11 @@ class AtomItem {
 
   /// Parse constructor for the AtomItem class, used when 'parsing' a feed
   factory AtomItem.parse(XmlElement element) => AtomItem(
-        id: element.findElements('id').firstOrNull?.text,
-        title: element.findElements('title').firstOrNull?.text,
-        updated:
-            parseDateTime(element.findElements('updated').firstOrNull?.text),
+        id: element.findElements('id').firstOrNull?.innerText,
+        title: element.findElements('title').firstOrNull?.innerText,
+        updated: parseDateTime(
+          element.findElements('updated').firstOrNull?.innerText,
+        ),
         authors: element.findElements('author').map(AtomPerson.parse).toList(),
         links: element.findElements('link').map(AtomLink.parse).toList(),
         categories:
@@ -41,10 +42,10 @@ class AtomItem {
             element.findElements('contributor').map(AtomPerson.parse).toList(),
         source:
             element.findElements('source').map(AtomSource.parse).firstOrNull,
-        published: element.findElements('published').firstOrNull?.text,
-        content: element.findElements('content').firstOrNull?.text,
-        summary: element.findElements('summary').firstOrNull?.text,
-        rights: element.findElements('rights').firstOrNull?.text,
+        published: element.findElements('published').firstOrNull?.innerText,
+        content: element.findElements('content').firstOrNull?.innerText,
+        summary: element.findElements('summary').firstOrNull?.innerText,
+        rights: element.findElements('rights').firstOrNull?.innerText,
         media: Media.parse(element),
       );
 
